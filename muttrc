@@ -28,9 +28,24 @@ unset confirmappend
 unset mark_old
 set beep_new
 
-bind index  \t     next-unread
-bind pager  <Up>   previous-line
-bind pager  <Down> next-line
+# Key bindings {{{
+bind index gg     first-entry
+bind index G      last-entry
+bind index R      group-reply
+bind index N      search-opposite
+bind index \t     next-unread
+
+bind pager gg     top
+bind pager G      bottom
+bind pager R      group-reply
+bind pager N      search-opposite
+bind pager k      previous-line
+bind pager j      next-line
+
+bind editor <Tab> complete-query
+
+macro index M "<save-message>?<toggle-mailboxes>" "move a message"
+# }}}
 
 source ~/.mutt/colors
 source ~/.mutt/gpg
