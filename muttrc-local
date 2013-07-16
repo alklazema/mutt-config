@@ -1,25 +1,17 @@
 # vim: set ft=muttrc
-# This is an example config for gmail accounts
-# Replace ACCOUNTNAME with your account, and optionally set an imap_pass
+set from="Firstname Lastname <email@example.tld>"
 
-# Get the main settings
-source ~/.muttrc
+set folder=~Mail/ExampleAccount
+set spoolfile=+INBOX
+set record=+Sent
+set postponed=+Drafts
 
-set from="ACCOUNTNAME <ACCOUNTNAME@gmail.com>"
-set imap_user=ACCOUNTNAME@gmail.com
-#set imap_pass=<application-pass>
+mailboxes +Archive.`date +"%Y"` \
+          +Sent \
+          +somelist
 
-set folder=imaps://imap.gmail.com
-set spoolfile=imaps://imap.gmail.com/INBOX
-set record=imaps://imap.gmail.com/[Gmail]/Sent\ Mail
-set postponed=imaps://imap.gmail.com/[Gmail]/Drafts
+set smtp_url=smtps://ACCOUNTNAME@smtp.example.tld/"
 
-set header_cache=~/.mutt/gmail-cache
-
-set smtp_url=smtps://ACCOUNTNAME\@gmail.com@smtp.gmail.com/"
-
-# Optionally override signature
-#set signature=~/.mutt/gmail-signature
-
-# ... and PGP settings
-#set pgp_sign_as=0x12345678
+# Hooks
+save-hook "~t somelist@example.tld" +somelist
+save-hook ~A                        +Archive.`date +"%Y"`
