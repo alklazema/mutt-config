@@ -28,6 +28,27 @@ unset confirmappend
 unset mark_old
 set beep_new
 
+
+# Colors {{{
+color index   brightgreen default ~N
+color index   red         default ~F
+color index   yellow      default ~P
+color index   default     red     ~D
+
+color header  brightmagenta default ^Subject:
+color header  green      default ^From:
+color header  green      default ^To:
+color header  brightblue default ^Date:
+color header  brightblue default ^CC:
+color header  brightblue default ^BCC:
+
+color body    brightblue default (http|ftp)s?://[\-\.\,/%~_:\;?\#a-zA-Z0-9=&]+
+
+color quoted  cyan       default
+color quoted1 magenta    default
+color quoted2 yellow     default
+# }}}
+
 # Key bindings {{{
 bind index gg     first-entry
 bind index G      last-entry
@@ -47,5 +68,4 @@ bind editor <Tab> complete-query
 macro index M "<save-message>?<toggle-mailboxes>" "move a message"
 # }}}
 
-source ~/.mutt/colors
 source ~/.mutt/gpg
