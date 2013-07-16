@@ -1,6 +1,10 @@
 # vim: set ft=muttrc
+# Source global muttrc
 source /etc/Muttrc
+# Source ~/.muttrc-local if it exists
+source `FILE=$HOME/.muttrc-local; test -s "$FILE" && echo "$FILE" || echo /dev/null`
 
+set mbox_type=Maildir
 set realname="Rune Hammersland"
 
 set sort=threads
