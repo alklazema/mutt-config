@@ -24,6 +24,8 @@ set mime_forward=ask-no
 set editor="vim -c 'set tw=74' +/^$ +nohl"
 set signature=~/.signature
 set forward_format="Fwd: %s"
+set query_command="lbdbq %s"
+
 set crypt_verify_sig=yes
 #set crypt_replysign
 set crypt_replysignencrypted=yes

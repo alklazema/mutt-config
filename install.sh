@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPODIR="${PWD}"
-INSTALL=(muttrc mutt)
+INSTALL=(muttrc mutt lbdb)
 
 for target in ${INSTALL[@]}; do
     if [ -e "${HOME}/.${target}" ]; then
