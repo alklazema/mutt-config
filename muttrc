@@ -1,4 +1,6 @@
 # vim: set ft=muttrc
+source /etc/Muttrc
+
 set realname="Rune Hammersland"
 
 set sort=threads
@@ -8,8 +10,8 @@ set mark_old=no
 set charset=utf-8
 
 set pager_index_lines=5
-ignore *
-unignore Date: From: To: Subject: CC: BCC:
+set menu_scroll
+set pager_stop
 hdr_order Subject: From: To: Date: CC: BCC:
 alternative_order text/plain text/enriched text/html
 
@@ -22,6 +24,11 @@ set mime_forward=ask-no
 set editor="vim -c 'set tw=74' +/^$ +nohl"
 set signature=~/.signature
 set forward_format="Fwd: %s"
+set crypt_verify_sig=yes
+#set crypt_replysign
+set crypt_replysignencrypted=yes
+set pgp_verify_sig=yes
+set pgp_auto_decode=yes
 
 set copy=yes
 unset confirmappend
@@ -67,5 +74,3 @@ bind editor <Tab> complete-query
 
 macro index M "<save-message>?<toggle-mailboxes>" "move a message"
 # }}}
-
-source ~/.mutt/gpg
