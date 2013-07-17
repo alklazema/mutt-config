@@ -10,7 +10,7 @@ prompt_yn() {
 }
 
 REPODIR="${PWD}"
-INSTALL=(muttrc mutt lbdbrc)
+INSTALL=(muttrc lbdbrc)
 postsync=postsync-offlineimap.sh
 
 for target in ${INSTALL[@]}; do
