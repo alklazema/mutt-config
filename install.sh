@@ -23,7 +23,7 @@ done
 
 notmuch=$(/bin/which notmuch)
 if [ $? -eq 0 ]; then
-    if [ ! -e "${HOME}/.notmuch-config" ];
+    if [ ! -e "${HOME}/.notmuch-config" ]; then
         prompt_yn "Set up notmuch?" && notmuch config
     fi
 fi
